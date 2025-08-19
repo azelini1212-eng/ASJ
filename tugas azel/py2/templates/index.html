@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kecocokan Cinta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec;
+            color: #880e4f;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #d500f9;
+        }
+        form {
+            margin: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border: 2px solid #880e4f;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #d500f9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mesin Penghitung Kecocokan Cinta</h1>
+    <p>Masukkan dua nama untuk menghitung kecocokan cinta mereka!</p>
+
+    <form method="POST">
+        <input type="text" name="name1" placeholder="Nama Pertama" value="{{ name1 }}" required><br>
+        <input type="text" name="name2" placeholder="Nama Kedua" value="{{ name2 }}" required><br>
+        <button type="submit">Hitung Kecocokan!</button>
+    </form>
+
+    {% if love_score is not none %}
+        <div class="result">
+            <p>Kecocokan cinta antara {{ name1 }} dan {{ name2 }} adalah <strong>{{ love_score }}%</strong></p>
+        </div>
+    {% endif %}
+
+</body>
+</html>
